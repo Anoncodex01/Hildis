@@ -22,11 +22,11 @@ export default function ClientLogos({ title = "Our Clients" }: ClientLogosProps)
       <h2 className="text-center text-3xl font-bold text-gray-900 mb-10">{title}</h2>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div className="flex items-center gap-6 overflow-x-auto flex-nowrap sm:flex-wrap sm:justify-center md:gap-12">
           {logos.map((logo, index) => (
             <div
               key={index}
-              className="flex items-center justify-center transition-all duration-300 hover:scale-105"
+              className="flex items-center justify-center transition-all duration-300 hover:scale-105 shrink-0"
               style={{
                 width: '145px',
                 height: '58px',

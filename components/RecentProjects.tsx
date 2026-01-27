@@ -37,15 +37,13 @@ export default function RecentProjects() {
           {/* First Project Card */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row min-h-[300px] md:min-h-[350px] lg:h-[400px]">
             {/* Left Side - Image */}
-            <div className="relative w-full lg:w-1/2 h-48 sm:h-64 md:h-72 lg:h-full">
+            <div className="relative w-full lg:w-1/2 h-56 sm:h-72 md:h-80 lg:h-full overflow-hidden rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none">
               <Image
                 src="/images/Union (1).png"
                 alt="Grinding Circuit Chemical Optimization"
                 fill
-                className="object-contain lg:object-cover"
-                style={{ 
-                  objectPosition: 'left center',
-                }}
+                className="object-cover"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -111,15 +109,13 @@ export default function RecentProjects() {
           {/* Second Project Card */}
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row min-h-[300px] md:min-h-[350px] lg:h-[400px]">
             {/* Left Side - Image */}
-            <div className="relative w-full lg:w-1/2 h-48 sm:h-64 md:h-72 lg:h-full">
+            <div className="relative w-full lg:w-1/2 h-56 sm:h-72 md:h-80 lg:h-full overflow-hidden rounded-t-3xl lg:rounded-l-3xl lg:rounded-tr-none">
               <Image
                 src="/images/Union.png"
                 alt="Cement Kiln Production Enhancement"
                 fill
-                className="object-contain lg:object-cover"
-                style={{ 
-                  objectPosition: 'left center',
-                }}
+                className="object-cover"
+                style={{ objectFit: 'cover', objectPosition: 'center' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />

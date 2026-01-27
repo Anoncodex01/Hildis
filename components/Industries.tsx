@@ -66,17 +66,10 @@ export default function Industries() {
         </div>
 
         {/* Main Content Area - Large Red Rectangle */}
-        <div 
-          className="bg-red-600 rounded-3xl overflow-hidden shadow-2xl mx-auto relative"
-          style={{
-            width: '1343px',
-            maxWidth: '100%',
-            height: '564px',
-          }}
-        >
+        <div className="bg-red-600 rounded-3xl overflow-hidden shadow-2xl mx-auto relative w-full max-w-[1343px] lg:h-[564px]">
           <div className="grid lg:grid-cols-[30%_35%_35%] gap-0 h-full relative">
             {/* Left Section - Image */}
-            <div className="relative h-full overflow-hidden rounded-l-3xl">
+            <div className="relative h-56 sm:h-64 md:h-72 lg:h-full overflow-hidden rounded-t-3xl lg:rounded-t-none lg:rounded-l-3xl">
               {/* Preload all images but only show the selected one */}
               {industriesData.map((industry, index) => (
                 <div
