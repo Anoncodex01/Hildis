@@ -1,0 +1,419 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Leaflet CSS - Imported here for global availability */
+@import 'leaflet/dist/leaflet.css';
+
+/* ===== INFINITE HORIZONTAL ANIMATIONS ===== */
+@keyframes panHorizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes panHorizontalSlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+@keyframes panHorizontalSlower {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-12.5%);
+  }
+}
+
+@keyframes panHorizontalVerySlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-6.25%);
+  }
+}
+
+@keyframes panHorizontalVeryVerySlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-3.125%);
+  }
+}
+
+.animate-pan-horizontal {
+  animation: panHorizontal 30s linear infinite;
+}
+
+.animate-pan-horizontal-slow {
+  animation: panHorizontal 60s linear infinite;
+}
+
+.animate-pan-horizontal-medium {
+  animation: panHorizontal 45s linear infinite;
+}
+
+.animate-pan-horizontal-slower {
+  animation: panHorizontal 90s linear infinite;
+}
+
+.animate-pan-horizontal-very-slow {
+  animation: panHorizontal 120s linear infinite;
+}
+
+.animate-pan-horizontal-very-very-slow {
+  animation: panHorizontal 180s linear infinite;
+}
+
+@layer base {
+  body {
+    font-family: 'MarkPro', sans-serif;
+    zoom: 1.1;
+  }
+}
+
+/* MarkPro Font Family - Complete Set */
+/* Thin Weights */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Hairline.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-HairlineItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Extra Light */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-ExtraLightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Light Weights */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Book.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-BookItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Heavy */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Heavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-HeavyItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Black */
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MarkPro';
+  src: url('/fonts/MarkPro-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@layer utilities {
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+  }
+}
+
+/* Hide Leaflet zoom controls and attribution */
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  display: none !important;
+}
+
+/* Remove extra spacing from Leaflet container */
+.leaflet-container {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Style for branch label icon */
+.branch-label-icon {
+  background: transparent !important;
+  border: none !important;
+  pointer-events: none !important;
+}
+
+/* Style for region tooltips */
+.region-tooltip {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.region-tooltip::before {
+  border-top-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Apply drop shadow to the map shape (Tanzania regions) */
+.leaflet-overlay-pane svg {
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.15)) drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Remove Leaflet's default borders and outlines */
+.leaflet-container {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Target the specific map container */
+.leaflet-map-custom {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove focus borders */
+.leaflet-container:focus {
+  outline: none !important;
+  border: none !important;
+}
+
+/* Remove any borders from map tiles */
+.leaflet-tile {
+  border: none !important;
+}
+
+/* Remove borders from map pane */
+.leaflet-map-pane {
+  border: none !important;
+}
+
+/* Add fade-in animation */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+/* Customize Leaflet tooltips */
+.region-tooltip {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 4px 8px;
+  color: #111827;
+}
+
+/* Ensure popups have proper styling */
+.leaflet-popup-content-wrapper {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border: none !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* Remove any shadow from map container */
+.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+  box-shadow: none !important;
+}
+
+/* Smooth animations for better performance */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Ensure infinite background animations run smoothly */
+.animate-pan-horizontal,
+.animate-pan-horizontal-slow,
+.animate-pan-horizontal-medium,
+.animate-pan-horizontal-slower,
+.animate-pan-horizontal-very-slow,
+.animate-pan-horizontal-very-very-slow {
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* Prevent animation on reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-pan-horizontal,
+  .animate-pan-horizontal-slow,
+  .animate-pan-horizontal-medium,
+  .animate-pan-horizontal-slower,
+  .animate-pan-horizontal-very-slow,
+  .animate-pan-horizontal-very-very-slow,
+  .animate-scroll,
+  .animate-fade-in {
+    animation: none !important;
+  }
+}

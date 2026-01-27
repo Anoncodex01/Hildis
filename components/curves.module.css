@@ -1,0 +1,25 @@
+/* Image container - no border radius, unified with parent card */
+.image-cut {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bottom curve overlay on image - creates smooth cut/transition */
+.image-cut::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: white;
+  clip-path: ellipse(150% 100% at 50% 100%);
+  z-index: 10;
+}
+
+/* Content container with rounded top-right to match image */
+.content-cut {
+  border-radius: 0 2rem 1.5rem 0; /* top-right matches image, bottom-right rounded */
+  position: relative;
+}
+  

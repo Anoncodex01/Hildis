@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Mission Card (Working Image)</title>
+<style>
+body {
+  background:#f0f0f0;
+  font-family: sans-serif;
+  padding:40px;
+}
+
+/* Outer card */
+.card {
+  width: 430px;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  margin: auto;
+  overflow: hidden;
+}
+
+/* ---- TOP IMAGE ---- */
+
+.card-img {
+  height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* The REAL FIX → Using mask-image with SVG */
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* SVG mask (curved bottom-left) */
+  mask-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+      <path d='M0 0 H100 V70 Q40 100 0 60 Z' fill='white'/>\
+    </svg>");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+/* ---- TEXT AREA ---- */
+
+.text-box {
+  padding: 40px 32px 32px;
+}
+
+.text-box h3 {
+  color: #202766;
+  font-size: 26px;
+  margin: 0 0 16px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.text-box p {
+  font-size: 17px;
+  color: #444;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ---- BOTTOM CURVE RIGHT ---- */
+.text-box {
+  /* mirror curve */
+  mask-image: url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+      <path d='M100 0 H0 V40 Q60 0 100 30 Z' fill='white'/>\
+    </svg>");
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="card-img">
+    <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress">
+  </div>
+
+  <div class="text-box">
+    <h3>Our Mission</h3>
+    <p>
+      To build lasting partnerships with our customers by delivering reliable,
+      innovative, and value-driven solutions. We embrace change, encourage innovation,
+      and uphold the highest standards of professionalism in everything we do.
+    </p>
+  </div>
+
+</div>
+
+</body>
+</html>
