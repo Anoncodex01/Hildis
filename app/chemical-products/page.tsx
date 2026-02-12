@@ -70,14 +70,16 @@ export default function ChemicalProductsPage() {
         </div>
       </section>
 
-      {/* Optimizing Performance Section - Centered */}
+      {/* Optimizing Performance Section */}
       <section className="pt-8 pb-12 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col items-center text-center">
-            <div className="h-1 w-12 bg-gradient-to-r from-red-500 to-red-600 mb-6 rounded-full"></div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 max-w-4xl bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 bg-clip-text text-transparent">
-              Optimizing performance,{' '}
-              <span className="bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">protecting assets.</span>
+          <div className="flex flex-col text-left">
+            <div className="h-1 w-12 bg-[#BB181B] mb-4"></div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+              Optimizing <span className="text-[#BB181B]">performance</span>,
+            </h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+              protecting <span className="text-[#BB181B]">assets</span>.
             </h2>
           </div>
         </div>
@@ -89,7 +91,7 @@ export default function ChemicalProductsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Left - Text Content */}
             <div className="relative z-10">
-              <div className="h-1 w-12 bg-gradient-to-r from-red-500 to-red-600 mb-6 rounded-full shadow-lg shadow-red-500/30"></div>
+              <div className="h-1 w-12 bg-[#BB181B] mb-6"></div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Water Treatment Chemicals
               </h2>
@@ -359,6 +361,75 @@ export default function ChemicalProductsPage() {
         </div>
       </section>
 
+      {/* Mineral Processing Chemicals Section */}
+      <section className="py-12 bg-gradient-to-b from-white to-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Text Content */}
+            <div className="relative z-10">
+              <div className="h-1 w-12 bg-[#BB181B] mb-6"></div>
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                Mineral processing chemicals
+              </h2>
+              <p className="text-gray-700 text-lg leading-relaxed mb-8">
+                Specialized chemical reagents for mineral extraction and processing, including Hydrogen Peroxide, Sodium Cyanide, Hydrochloric Acid (HCl), Caustic Soda, Lime, Ferrous Sulphate, and Activated Carbon. These chemicals are critical for leaching, pH adjustment, precipitation, purification, and adsorption in metallurgical circuits.
+              </p>
+              
+              <div className="space-y-5 mb-10">
+                <div>
+                  <span className="font-bold text-gray-900 text-lg">Application:</span>{' '}
+                  <span className="text-gray-700">Mineral extraction, ore beneficiation, froth flotation, leaching (cyanide/acid), solid-liquid separation, pH and process control.</span>
+                </div>
+                <div>
+                  <span className="font-bold text-gray-900 text-lg">Industry:</span>{' '}
+                  <span className="text-gray-700">Gold Mining, Copper &amp; Base Metals Mining, Iron Ore, Phosphate, Industrial Minerals.</span>
+                </div>
+                <div>
+                  <span className="font-bold text-gray-900 text-lg">Partner:</span>{' '}
+                  <span className="text-gray-700">AECI Mining Solutions, Solvay, BASF Mining Solutions.</span>
+                </div>
+              </div>
+
+              <button
+                onClick={openModal}
+                className="inline-flex items-center bg-[#BB181B] text-white pl-7 pr-3 py-3 rounded-full font-semibold text-sm md:text-base hover:opacity-90 transition-all duration-300"
+              >
+                <span className="mr-4">Request Mineral Chemicals</span>
+                <span className="flex items-center justify-center w-8 h-8 rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 text-[#BB181B]" strokeWidth={2.5} />
+                </span>
+              </button>
+            </div>
+
+            {/* Right - Image Collage */}
+            <div className="relative h-[500px]">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-full h-full">
+                  <div className="absolute top-0 right-0 w-3/4 h-3/4 rounded-3xl overflow-hidden shadow-2xl z-10 ring-4 ring-white/50 backdrop-blur-sm">
+                    <Image
+                      src="/chemical/process%20chemical/Rectangle%2051.png"
+                      alt="Mineral processing chemicals"
+                      fill
+                      className="object-cover rounded-3xl"
+                      sizes="(max-width: 768px) 75vw, 600px"
+                    />
+                  </div>
+                  <div className="absolute bottom-0 left-0 w-2/3 h-2/3 rounded-3xl overflow-hidden shadow-xl z-0 opacity-80 ring-2 ring-gray-200/50">
+                    <Image
+                      src="/chemical/process%20chemical/Rectangle%2052.png"
+                      alt="Mineral processing chemicals storage"
+                      fill
+                      className="object-cover rounded-3xl"
+                      sizes="(max-width: 768px) 66vw, 500px"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Banner Section with modal functionality */}
       <section className="py-12 sm:py-16 md:py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -403,34 +474,35 @@ export default function ChemicalProductsPage() {
                 </div>
               </div>
 
-              {/* RIGHT SIDE IMAGE MASKED INSIDE CONTAINER */}
+              {/* RIGHT SIDE - Ellipse image */}
               <div className="relative h-full flex items-center justify-end">
                 <div
-                  className="absolute overflow-hidden rounded-full hidden lg:block"
+                  className="absolute overflow-hidden hidden lg:block"
                   style={{
-                    width: '480px',
-                    height: '480px',
-                    right: '50px',
-                    top: '75%',
-                    transform: 'translate(30%, -50%)',
+                    width: '420px',
+                    height: '420px',
+                    right: '40px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
                     zIndex: 10,
+                    borderRadius: '50%',
                   }}
                 >
                   <Image
-                    src="/chemical/08ce7eb3419a1b29d032a2306b0e4d54ff30643d.png"
-                    alt="Industrial Chemicals"
+                    src="/chemical/process%20chemical/Ellipse%2010.png"
+                    alt="Chemical processing facility"
                     fill
                     className="object-cover"
-                    sizes="(max-width: 1024px) 0px, 480px"
+                    sizes="(max-width: 1024px) 0px, 420px"
                   />
                 </div>
                 
-                {/* Mobile Image - Simpler design */}
+                {/* Mobile - Ellipse image */}
                 <div className="lg:hidden relative h-full w-full flex items-center justify-center pr-4">
                   <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 overflow-hidden rounded-full">
                     <Image
-                      src="/chemical/08ce7eb3419a1b29d032a2306b0e4d54ff30643d.png"
-                      alt="Industrial Chemicals"
+                      src="/chemical/process%20chemical/Ellipse%2010.png"
+                      alt="Chemical processing facility"
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 288px"

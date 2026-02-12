@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X } from 'lucide-react';
+import { X, CheckCircle } from 'lucide-react';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -16,12 +16,13 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     phone: '',
     message: ''
   });
+  const [isSent, setIsSent] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
+    setFormData(prev => ({
+      ...prev,
       [e.target.name]: e.target.value
-    });
+    }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -34,9 +35,14 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
       phone: '',
       message: ''
     });
+    setIsSent(true);
+    setTimeout(() => {
+      setIsSent(false);
+      onClose();
+    }, 2000);
   };
 
-  // Close modal on Escape key
+  // Close modal on Escape key; reset sent state when opening
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -45,8 +51,11 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     };
 
     if (isOpen) {
+      setIsSent(false);
       document.addEventListener('keydown', handleEscape);
       document.body.style.overflow = 'hidden';
+    } else {
+      setIsSent(false);
     }
 
     return () => {
@@ -89,7 +98,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
           </p>
         </div>
 
-        {/* Form */}
+        {/* Success message */}
+        {isSent ? (
+          <div className="px-6 pb-8 flex flex-col items-center justify-center py-12">
+            <CheckCircle className="w-16 h-16 text-green-600 mb-4" />
+            <p className="text-xl font-semibold text-gray-900 mb-2">Message Sent!</p>
+            <p className="text-gray-600 text-sm text-center">
+              Thank you for contacting us. We&apos;ll get back to you shortly.
+            </p>
+          </div>
+        ) : (
+        /* Form */
         <form onSubmit={handleSubmit} className="px-6 pb-6 space-y-4">
           {/* Name and Company Name - Two columns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -184,6 +203,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             Send Message
           </button>
         </form>
+        )}
       </div>
     </div>
   );

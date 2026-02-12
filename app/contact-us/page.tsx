@@ -3,8 +3,64 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Image from 'next/image';
+import { ArrowRight, MapPin, Mail, Phone, Globe } from 'lucide-react';
+import Branches from '@/components/Branches';
 
-export default function ContactSection() {
+const OFFICES = [
+  {
+    id: 'arusha',
+    name: 'Head Office – Arusha',
+    address: 'Nairobi Road, Arusha, Tanzania. P.O. Box 14473',
+    email: 'info@hildiseastafrica.com',
+    phones: ['+255 740 547 470', '+255 754 434 303', '+255 754 434 412', '+255 754 434 675'],
+    isHQ: true,
+  },
+  {
+    id: 'dar',
+    name: 'Dar es Salaam',
+    address: 'Dar es Salaam, Tanzania',
+    email: 'stephano.mkinga@hildiseastafrica.com',
+    phones: ['+255 754 434 247'],
+  },
+  {
+    id: 'dodoma',
+    name: 'Dodoma',
+    address: 'Dodoma, Tanzania',
+    email: 'sarah@hildiseastafrica.com',
+    phones: ['+255 756 925 639'],
+  },
+  {
+    id: 'mwanza',
+    name: 'Mwanza',
+    address: 'Mwanza, Tanzania',
+    email: 'jdaffa@hildiseastafrica.com',
+    phones: ['+255 718 796 079'],
+  },
+  {
+    id: 'shinyanga',
+    name: 'Shinyanga',
+    address: 'Shinyanga, Tanzania',
+    email: 'francis.kiyeyeu@hildiseastafrica.com',
+    phones: ['+255 754 434 445'],
+  },
+  {
+    id: 'geita',
+    name: 'Geita',
+    address: 'Geita, Tanzania',
+    email: 'info@hildiseastafrica.com',
+    phones: ['+255 754 434 303'],
+  },
+  {
+    id: 'tanga',
+    name: 'Tanga',
+    address: 'Tanga, Tanzania',
+    email: 'betty@hildiseastafrica.com',
+    phones: ['+255 759 236 752'],
+  },
+];
+
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     fullName: '',
     companyName: '',
@@ -15,15 +71,11 @@ export default function ContactSection() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
     console.log('Form submitted:', formData);
   };
 
@@ -31,24 +83,65 @@ export default function ContactSection() {
     <div className="min-h-screen bg-white">
       <Header />
       
-      <section className="py-12 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Header - Centered */}
-          <div className="text-center mb-10">
+      {/* Hero Section */}
+      <section className="relative">
+        <div className="px-6">
+          <div
+            className="relative overflow-hidden mx-auto"
+            style={{
+              width: '1344px',
+              maxWidth: '100%',
+              height: '400px',
+              borderRadius: '20px',
+              minHeight: '400px',
+            }}
+          >
+            <Image
+              src="/images/hero.jpg"
+              alt="Contact Us"
+              fill
+              className="object-cover"
+              priority
+            />
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.55)' }}
+            />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
+              <div className="text-white text-sm mb-8">
+                <span className="opacity-80">Home</span>
+                <ArrowRight className="w-4 h-4 inline mx-2" />
+                <span className="text-red-600 font-semibold">Contact Us</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Get In Touch
+              </h1>
+              <p className="text-white text-lg md:text-xl max-w-3xl leading-relaxed opacity-90">
+                We&apos;re here to support your industrial needs across Tanzania.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Form & Offices */}
+      <section className="py-12 sm:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="mb-10 text-left">
+            <div className="h-1 w-12 bg-[#BB181B] mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-              Get In Touch
+              Send us a message
             </h2>
             <p className="text-gray-600">
-              We're here to support your industrial needs.
+              Fill out the form below and we&apos;ll get back to you shortly.
             </p>
           </div>
 
-          {/* Two Column Layout - More compact */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-            {/* Left Side - Contact Form - Reduced width */}
-            <div className="lg:pr-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            {/* Left - Contact Form */}
+            <div>
               <form onSubmit={handleSubmit} className="space-y-5">
-                {/* First Row: Full Name & Company Name */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -81,8 +174,6 @@ export default function ContactSection() {
                     />
                   </div>
                 </div>
-
-                {/* Second Row: Email & Phone - Compact */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
@@ -115,8 +206,6 @@ export default function ContactSection() {
                     />
                   </div>
                 </div>
-
-                {/* Message Textarea - Smaller */}
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1.5">
                     Message
@@ -132,12 +221,10 @@ export default function ContactSection() {
                     required
                   />
                 </div>
-
-                {/* Submit Button - Smaller and left aligned */}
                 <div className="text-left">
                   <button
                     type="submit"
-                    className="inline-block bg-red-600 text-white py-2.5 px-8 text-sm font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    className="inline-block bg-[#BB181B] text-white py-2.5 px-8 text-sm font-semibold rounded-lg hover:bg-red-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                   >
                     Send Message
                   </button>
@@ -145,78 +232,77 @@ export default function ContactSection() {
               </form>
             </div>
 
-            {/* Right Side - Contact Information - More compact */}
-            <div className="bg-gray-50 rounded-xl p-7">
-              <div className="space-y-7">
-                {/* Head Office Title */}
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">
-                    Head Office – Arusha
-                  </h3>
-                  <div className="space-y-2.5">
-                    <p className="text-gray-700 flex items-start">
-                      <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      <span className="text-sm">Nairobi Road, Arusha Tanzania P.O.Box: 14473</span>
-                    </p>
-                    
-                    <p className="text-gray-700 flex items-start">
-                      <svg className="w-5 h-5 text-red-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                      </svg>
-                      <span className="text-sm">info@hildiseastafrica.com</span>
-                    </p>
-                  </div>
-                </div>
-
-                {/* Phone Numbers - 2x2 grid */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-                    <svg className="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Phone
-                  </h4>
-                  <div className="grid grid-cols-2 gap-3">
-                    {[
-                      '+255 740 547 470',
-                      '+255 754 434 303',
-                      '+255 754 434 412',
-                      '+255 754 434 675'
-                    ].map((phone, index) => (
-                      <p key={index} className="text-gray-700 text-sm">
-                        {phone}
+            {/* Right - All Offices */}
+            <div className="space-y-6">
+              <div className="h-1 w-12 bg-[#BB181B] mb-4" />
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                Our Offices
+              </h3>
+              <div className="space-y-5 max-h-[500px] overflow-y-auto pr-2">
+                {OFFICES.map((office) => (
+                  <div
+                    key={office.id}
+                    className="bg-gray-50 rounded-xl p-5 border border-gray-100 hover:border-red-100 transition-colors"
+                  >
+                    <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                      {office.name}
+                      {office.isHQ && (
+                        <span className="text-xs font-normal bg-[#BB181B] text-white px-2 py-0.5 rounded">
+                          HQ
+                        </span>
+                      )}
+                    </h4>
+                    <div className="space-y-2 text-sm">
+                      <p className="text-gray-700 flex items-start gap-2">
+                        <MapPin className="w-4 h-4 text-[#BB181B] mt-0.5 flex-shrink-0" />
+                        <span>{office.address}</span>
                       </p>
-                    ))}
+                      <p className="text-gray-700 flex items-start gap-2">
+                        <Mail className="w-4 h-4 text-[#BB181B] mt-0.5 flex-shrink-0" />
+                        <a
+                          href={`mailto:${office.email}`}
+                          className="text-[#BB181B] hover:underline"
+                        >
+                          {office.email}
+                        </a>
+                      </p>
+                      <div className="flex flex-wrap gap-x-4 gap-y-1">
+                        {office.phones.map((phone, i) => (
+                          <p key={i} className="text-gray-700 flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-[#BB181B] flex-shrink-0" />
+                            <a
+                              href={`tel:${phone.replace(/\s+/g, '')}`}
+                              className="text-gray-700 hover:text-[#BB181B]"
+                            >
+                              {phone}
+                            </a>
+                          </p>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-
-                {/* Website */}
-                <div>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                    <svg className="w-5 h-5 text-red-600 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                    </svg>
-                    Website
-                  </h4>
-                  <p className="text-gray-700 text-sm">
-                    <a 
-                      href="https://www.hildiseastafrica.com" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="text-red-600 hover:text-red-700 hover:underline"
-                    >
-                      www.hildiseastafrica.com
-                    </a>
-                  </p>
-                </div>
+                ))}
+              </div>
+              <div className="pt-4">
+                <p className="text-gray-700 flex items-center gap-2 text-sm">
+                  <Globe className="w-4 h-4 text-[#BB181B]" />
+                  <a
+                    href="https://www.hildiseastafrica.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#BB181B] hover:underline"
+                  >
+                    www.hildiseastafrica.com
+                  </a>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Branches Map - includes Tanzania map and office locations */}
+      <Branches variant="light" />
 
       <Footer />
     </div>

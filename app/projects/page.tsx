@@ -35,9 +35,9 @@ export default function ProjectsPage() {
       title: 'Geotextile Membrane Supply - WASCO',
       description: 'Supplied high-performance geotextile membranes for enhanced filtration and containment solutions.',
       solutions: ['Geotextile supply', 'Containment consulting'],
-      clients: 'WASCO, TCC',
+      clients: 'WASCO, GGM',
       location: 'Tanzania',
-      image: '/images/union.png',
+      image: '/projects/1.png',
     },
     {
       id: 2,
@@ -45,17 +45,17 @@ export default function ProjectsPage() {
       description: 'Delivered critical industrial chemicals and robust valve systems to ensure reliable, uninterrupted production.',
       solutions: ['Chemical supply', 'Valve installation'],
       clients: 'Mtibwa Sugar, Tanga Cement',
-      location: 'Mtwara and Tanga, Tanzania',
-      image: '/chemical/industrial.png',
+      location: 'Mtibwa and Tanga, Tanzania',
+      image: '/projects/2.png',
     },
     {
       id: 3,
       title: 'Water Treatment Solutions',
       description: 'Provided comprehensive water treatment chemicals to optimize boiler efficiency and process water management for sugar producers.',
       solutions: ['Water chemicals', 'System optimization'],
-      clients: 'Kilombero Sugar, Mtibwa Sugar, Msolwa Sugar',
-      location: 'Kilombero, Morogoro, Mtwara regions, Tanzania',
-      image: '/chemical/water.png',
+      clients: 'Mkulazi Sugar, Kilombero Sugar, Mtibwa Sugar',
+      location: 'Mkulazi, Kilombero, Mtibwa regions, Tanzania',
+      image: '/projects/3.png',
     },
     {
       id: 4,
@@ -64,25 +64,79 @@ export default function ProjectsPage() {
       solutions: ['Bearing supply', 'Maintenance planning'],
       clients: 'Tanga Cement',
       location: 'Tanga, Tanzania',
-      image: '/chemical/bearing.png',
+      image: '/projects/4.png',
     },
     {
       id: 5,
       title: 'Lubricants Distribution',
-      description: 'Delivered premium TotalEnergies and Caltex lubricants nationwide to protect assets and ensure smooth industrial operations.',
+      description: 'Delivered premium TotalEnergies lubricants nationwide to protect assets and ensure smooth industrial operations.',
       solutions: ['Lubricant supply', 'Program management'],
       clients: 'Various clients across the country',
       location: 'Nationwide, Tanzania',
-      image: '/chemical/lubricants.png',
+      image: '/projects/5.png',
     },
     {
       id: 6,
       title: 'Industrial Spares Supply',
       description: 'Supplied essential spare parts to support production continuity and timely maintenance for tobacco processing.',
       solutions: ['Spare parts supply', 'Emergency delivery'],
-      clients: 'Alliance One Tobacco Limited',
+      clients: 'Mkwawa Leaf Tobacco Limited',
       location: 'Tanzania',
-      image: '/chemical/spares.png',
+      image: '/projects/6.png',
+    },
+    {
+      id: 7,
+      title: 'SANY Equipment Deployment',
+      description: 'Supplied and delivered a fleet of robust SANY heavy machinery, including a 500-ton crane, to support critical infrastructure and material handling projects.',
+      solutions: ['Supply of SANY excavators, cranes, and heavy equipment.', 'On-site commissioning and operator training'],
+      clients: 'Geita Gold Mine (GGM)',
+      location: 'Geita, Tanzania',
+      image: '/projects/7.png',
+    },
+    {
+      id: 8,
+      title: 'Conveyor Belt Systems Installation',
+      description: 'Engineered and installed high-capacity conveyor belt systems to optimize ore and material transport across major mining operations.',
+      solutions: ['Design and installation of primary and overland conveyor belts.', 'System integration and continuous performance monitoring'],
+      clients: 'Geita Gold Mine (GGM), Shanta Gold',
+      location: 'Geita, Singida',
+      image: '/projects/8.png',
+    },
+    {
+      id: 9,
+      title: 'Ferrous Sulphate Chemical Supply',
+      description: 'Reliable bulk supply of Ferrous Sulphate for water treatment and precipitation processes in gold recovery circuits.',
+      solutions: ['Scheduled bulk delivery of high-purity Ferrous Sulphate.', 'Technical support for optimal dosing and process integration.'],
+      clients: 'Barrick Gold (North Mara)',
+      location: 'North Mara, Tanzania',
+      image: '/projects/9.png',
+    },
+    {
+      id: 10,
+      title: 'Full SAG Mill Liner Replacement',
+      description: 'Complete design, supply, and installation of a full set of premium wear-resistant liners for a Semi-Autogenous Grinding (SAG) mill.',
+      solutions: ['Supply of a full set of custom-engineered SAG mill liners.', 'Supervision of liner installation and mill commissioning.'],
+      clients: 'Barrick Gold (North Mara)',
+      location: 'North Mara, Tanzania',
+      image: '/projects/10.png',
+    },
+    {
+      id: 11,
+      title: 'Agitators & Spares Supply',
+      description: 'Comprehensive supply of industrial agitators, motors, and critical spare parts to ensure continuous operation of leaching and mixing circuits.',
+      solutions: ['Supply of new agitators and gearboxes.', 'Emergency supply of genuine spare parts and maintenance support.'],
+      clients: 'Barrick Gold (North Mara & Bulyanhulu), Geita Gold Mine (GGM)',
+      location: 'North Mara, Bulyanhulu, Geita',
+      image: '/projects/11.png',
+    },
+    {
+      id: 12,
+      title: 'Elution Heater Supply',
+      description: 'Supply and installation of a high-efficiency elution heater for the gold recovery carbon elution process.',
+      solutions: ['Supply of a custom-designed elution heater unit.', 'Integration into the existing carbon elution circuit.'],
+      clients: 'Geita Gold Mine (GGM)',
+      location: 'Geita, Tanzania',
+      image: '/projects/12.png',
     },
   ];
 
@@ -130,13 +184,10 @@ export default function ProjectsPage() {
       {/* Proven Impact Section - Reduced container and font sizes */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-10">
-            <div className="h-1 w-12 bg-red-600 mb-5" />
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-              Proven Impact
-            </h2>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-              Across <span className="text-red-600">Tanzania</span>
+          <div className="mb-10 text-left">
+            <div className="h-1 w-12 bg-[#BB181B] mb-4" />
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Across <span className="text-[#BB181B]">Tanzania</span>
             </h2>
           </div>
 
@@ -155,6 +206,7 @@ export default function ProjectsPage() {
                       alt={project.title}
                       fill
                       className="object-cover"
+                      unoptimized
                     />
                   </div>
 
@@ -175,7 +227,7 @@ export default function ProjectsPage() {
                         <ul className="mt-1 space-y-1.5">
                           {project.solutions.map((solution, idx) => (
                             <li key={idx} className="flex items-center gap-2 text-gray-900">
-                              <span className="text-red-600 text-base">◆</span>
+                              <span className="text-[#BB181B] text-base">◆</span>
                               <span className="text-sm">{solution}</span>
                             </li>
                           ))}
@@ -219,19 +271,19 @@ export default function ProjectsPage() {
           >
             <div className="grid lg:grid-cols-[45%_55%] items-center relative h-full">
               {/* LEFT SIDE CONTENT */}
-              <div className="text-white z-20 p-6 sm:p-8 lg:p-12 h-full flex flex-col justify-center">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 leading-tight whitespace-nowrap">
-                  Get expert support
+              <div className="text-white z-20 p-8 sm:p-10 lg:p-14 xl:p-16 h-full flex flex-col justify-center">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 leading-tight">
+                  Ready to strengthen
                   <br />
-                  For your operations
+                  your operations?
                 </h2>
 
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 font-light">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-8 sm:mb-10 font-light">
                   Speak with our team for supply requests, engineering support,
                   or project planning.
                 </p>
 
-                <div className="flex flex-wrap gap-3 sm:gap-4">
+                <div className="flex flex-wrap gap-4 sm:gap-6">
                   {/* Contact Us Button - Opens modal */}
                   <button
                     onClick={openModal}
@@ -258,26 +310,27 @@ export default function ProjectsPage() {
                     width: '480px',
                     height: '480px',
                     right: '50px',
-                    top: '75%',
+                    top: '50%',
                     transform: 'translate(30%, -50%)',
                     zIndex: 10,
                   }}
                 >
                   <Image
-                    src="/pump valves/15cd7775e4d8fb27fc888fa94f91435551f8ef4e.png"
-                    alt="Industrial materials"
+                    src="/projects/0b8a648faf4ef5915fc02f040accb30cf299ae9e.png"
+                    alt="Industrial and mining operations"
                     fill
                     className="object-cover"
+                    style={{ objectPosition: 'center 65%' }}
                     sizes="(max-width: 1024px) 0px, 480px"
                   />
                 </div>
                 
-                {/* Mobile Image */}
+                {/* Mobile Image - Simpler design */}
                 <div className="lg:hidden relative h-full w-full flex items-center justify-center pr-4">
                   <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 overflow-hidden rounded-full">
                     <Image
-                      src="/pump valves/15cd7775e4d8fb27fc888fa94f91435551f8ef4e.png"
-                      alt="Industrial materials"
+                      src="/projects/0b8a648faf4ef5915fc02f040accb30cf299ae9e.png"
+                      alt="Industrial and mining operations"
                       fill
                       className="object-cover"
                       sizes="(max-width: 640px) 192px, (max-width: 768px) 256px, 288px"

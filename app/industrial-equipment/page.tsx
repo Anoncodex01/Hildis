@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 import Footer from '@/components/Footer';
 import SectionCTA from '@/components/Contact';
 import ContactModal from '@/components/ContactModal';
+import ProductCard from '@/components/ProductCard';
 
 // Product data for different categories
 const products = {
@@ -91,6 +92,282 @@ const products = {
 };
 
 const categories = Object.keys(products);
+
+// Bradken Wear Solutions product data
+const bradkenProducts = {
+  'Mill Liners': {
+    image: '/industrial/bradken%20wear/Rectangle%2056.png',
+    name: 'Bradken Mill Liners',
+    description: 'Custom liners for SAG, Ball, and Rod mills. Includes lifter bars and shell plates to protect the mill and optimize grinding.',
+    uses: [
+      'Mill shell protection',
+      'Grinding optimization',
+      'Scheduled maintenance',
+      'Plant throughput'
+    ],
+    tags: 'Bradken, Mill Liners, Grinding Mill Parts, Mineral Processing',
+    industries: 'Mining, Mineral Processing, Cement'
+  },
+  'Ground Engaging Tools': {
+    image: '/industrial/bradken%20wear/Rectangle%2056-1.png',
+    name: 'Ground Engaging Tools (GET)',
+    description: 'Wear systems for excavators and loaders. Includes bucket lips, teeth, adapters, and wear plates for extreme conditions.',
+    uses: [
+      'Bucket protection',
+      'Digging efficiency',
+      'Reduced maintenance',
+      'Improved safety'
+    ],
+    tags: 'Bradken, Ground Engaging Tools, GET, Excavator Parts',
+    industries: 'Mining, Quarry, Earthmoving, Construction'
+  },
+  'Fixed Plant Wear Solutions': {
+    image: '/industrial/bradken%20wear/Rectangle%2056-2.png',
+    name: 'Fixed Plant Wear Solutions',
+    description: 'Wear components for processing plants. Includes chute liners, feeder pans, and crusher parts to minimize maintenance downtime.',
+    uses: [
+      'Protecting transfer points',
+      'Material handling systems',
+      'Reducing downtime',
+      'Extending plant life'
+    ],
+    tags: 'Bradken, Fixed Plant, Wear Liners, Material Handling',
+    industries: 'Mining, Mineral Processing, Aggregate, Cement'
+  }
+};
+
+const bradkenCategories = Object.keys(bradkenProducts);
+
+// Crushing & Screening Solutions product data
+const crushingProducts = {
+  'Jaw Crushers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056.png',
+    name: 'CE Africa Jaw Crushers',
+    description: 'Heavy-duty primary jaw crushers designed for tough African mining conditions, delivering high capacity and reliable performance in primary crushing applications.',
+    uses: [
+      'Primary ore crushing in mining operations',
+      'Quarry primary reduction',
+      'Large aggregate production',
+      'Demolition and recycling'
+    ],
+    tags: 'CE Africa, Jaw Crushers, Primary Crushing, Mining Equipment',
+    industries: 'Mining, Quarry, Construction, Recycling'
+  },
+  'Single Cylinder Cone Crushers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-1.png',
+    name: 'CE Africa Single Cylinder Cone Crushers',
+    description: 'Reliable single cylinder hydraulic cone crushers for secondary crushing applications, featuring simplified hydraulic systems and consistent performance in medium-duty operations.',
+    uses: [
+      'Secondary crushing in aggregate production',
+      'Mid-size mining operation reduction circuits',
+      'Construction material processing plants',
+      'Road base material production'
+    ],
+    tags: 'CE Africa, Cone Crushers, Hydraulic Systems, Secondary Crushing, Aggregate',
+    industries: 'Quarry, Aggregate Production, Mid-Scale Mining, Construction'
+  },
+  'Multiple Cylinder Cone Crushers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-2.png',
+    name: 'CE Africa Multiple Cylinder Cone Crushers',
+    description: 'Advanced multiple cylinder hydraulic cone crushers for fine and tertiary crushing, delivering precise product sizing and superior particle shape for quality aggregate production.',
+    uses: [
+      'Tertiary and fine crushing applications',
+      'High-quality cubical aggregate production',
+      'Manufactured sand production systems',
+      'Precision mineral processing circuits'
+    ],
+    tags: 'CE Africa, Fine Crushing, Multiple Cylinder, Cubical Aggregate, Precision, Sizing',
+    industries: 'High-Quality Aggregate, Concrete Production, Precision Mining'
+  },
+  'Vertical Shaft Impact Crushers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-3.png',
+    name: 'CE Africa Vertical Shaft Impact Crushers',
+    description: 'Vertical shaft impact crushers engineered to produce premium cubical aggregates for concrete and asphalt applications, ensuring optimal particle shape and gradation.',
+    uses: [
+      'Manufactured sand production for concrete',
+      'Cubical aggregate shaping for asphalt',
+      'High-quality road construction materials',
+      'Fine material production and shaping'
+    ],
+    tags: 'CE Africa, VSI Crushers, Aggregate Shaping, Sand Production',
+    industries: 'Construction, Road Building, Concrete Production, Asphalt Plants'
+  },
+  'Impact Crushers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-4.png',
+    name: 'CE Africa Impact Crushers',
+    description: 'Horizontal impact crushers providing versatile crushing capabilities for various materials including limestone, recycled concrete, and medium-hard rock applications.',
+    uses: [
+      'Limestone and sedimentary rock processing',
+      'Concrete and asphalt recycling operations',
+      'General-purpose aggregate production',
+      'Industrial mineral processing applications'
+    ],
+    tags: 'CE Africa, Impact Crushers, Versatile Crushing, Recycling, Limestone Processing',
+    industries: 'Quarry, Recycling Facilities, Construction, Industrial Minerals'
+  },
+  'Gyratory Crushers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-5.png',
+    name: 'CE Africa Gyratory Crushers',
+    description: 'Large-capacity gyratory crushers designed for high-tonnage primary crushing in major mining operations, offering superior efficiency and continuous operation capabilities.',
+    uses: [
+      'Large-scale primary ore reduction in mines',
+      'High-volume aggregate production plants',
+      'Copper and gold mining primary circuits',
+      'Major mineral processing plant feed preparation'
+    ],
+    tags: 'CE Africa, Gyratory Crushers, High-Capacity, Mining, Primary Reduction',
+    industries: 'Large-Scale Mining, Mineral Processing, Major Quarry Operations'
+  },
+  'Vibrating Screens': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-6.png',
+    name: 'CE Africa Vibrating Screens',
+    description: 'High-performance vibrating screens for precise material sizing, classification, and separation in crushing circuits, ensuring optimal product quality and circuit efficiency.',
+    uses: [
+      'Material sizing and product classification',
+      'Crushing circuit efficiency optimization',
+      'Product quality control and grading',
+      'Process plant screening and separation'
+    ],
+    tags: 'CE Africa, Vibrating Screens, Material Separation, Screening, Classification',
+    industries: 'Mining, Aggregate Processing, Mineral Beneficiation, Recycling'
+  },
+  'Vibrating Grizzly Feeders': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-7.png',
+    name: 'CE Africa Vibrating Grizzly Feeders',
+    description: 'Heavy-duty vibrating grizzly feeders providing controlled material feed to primary crushers while removing fines and protecting equipment from damage and overload.',
+    uses: [
+      'Controlled feeding to primary crushers',
+      'Oversize material screening before crushing',
+      'Crusher protection from tramp metal',
+      'Process optimization through regulated feed'
+    ],
+    tags: 'CE Africa, Grizzly Feeders, Material Feeding, Crusher Protection',
+    industries: 'Mining, Heavy-Duty Quarry, Bulk Material Handling, Mineral Processing'
+  },
+  'High Seam Feeder Breakers': {
+    image: '/industrial/Crushing%20%26%20Screening%20Solutions/Rectangle%2056-8.png',
+    name: 'CE Africa High Seam Feeder Breakers',
+    description: 'Heavy-duty high seam feeder breakers specifically designed for underground mining applications, providing primary reduction and controlled material handling in confined spaces.',
+    uses: [
+      'Underground mining primary reduction',
+      'Controlled material handling in mines',
+      'Coal and soft rock mining operations',
+      'Underground conveyor loading systems'
+    ],
+    tags: 'CE Africa, Feeder Breakers, Underground Mining, Primary Reduction',
+    industries: 'Underground Mining, Coal Mining, Tunneling'
+  }
+};
+
+const crushingCategories = Object.keys(crushingProducts);
+
+// Spare Wear Parts product data
+const spareWearProducts = {
+  'Mantles & Concaves': {
+    image: '/industrial/Spare%20Wear%20Parts/Rectangle%2056.png',
+    name: 'Mantles & Concaves',
+    description: 'Precision wear parts for cone crushers. The mantle and concave work together to crush material and control product size in secondary and tertiary crushing stages.',
+    uses: [
+      'Cone crusher chamber protection and performance',
+      'Precise control of final aggregate or mineral size',
+      'Scheduled maintenance and wear part replacement',
+      'Optimizing crushing circuit efficiency'
+    ],
+    tags: 'Mantles, Concaves, Cone Crusher Parts, Wear Components, CE Africa',
+    industries: 'Mining, Mineral Processing, Aggregate Production'
+  },
+  'Large Bronze Bushing': {
+    image: '/industrial/Spare%20Wear%20Parts/Rectangle%2056-1.png',
+    name: 'Large Bronze Bushing',
+    description: 'A critical mechanical component, typically a large bronze bushing, that supports the main shaft in a cone or gyratory crusher, ensuring smooth rotation and alignment.',
+    uses: [
+      'Supporting the main shaft in gyratory and cone crushers',
+      'Preventing metal-on-metal wear and friction',
+      'Essential for major crusher overhauls and rebuilds',
+      'Reducing vibration and ensuring stable operation'
+    ],
+    tags: 'Bronze Bushing, Crusher Bushing, Mechanical Spares, Crusher Shaft Support, CE Africa',
+    industries: 'Mining, Heavy Quarry, Mineral Processing'
+  },
+  'Ball Mill Liners': {
+    image: '/industrial/Spare%20Wear%20Parts/Rectangle%2056-2.png',
+    name: 'Ball Mill Liners',
+    description: 'Protective liners installed inside a ball mill. They shield the mill shell from wear caused by grinding media and ore, and can influence grinding efficiency.',
+    uses: [
+      'Protecting the ball mill shell from abrasion and impact',
+      'Lifting grinding media for effective ore grinding',
+      'Replacing worn liners during scheduled mill maintenance',
+      'Optimizing grinding performance and liner life'
+    ],
+    tags: 'Ball Mill Liners, Grinding Mill Parts, Mill Liners, Abrasion Protection, CE Africa',
+    industries: 'Mining, Mineral Processing, Cement Production'
+  }
+};
+
+const spareWearCategories = Object.keys(spareWearProducts);
+
+const mixerSolutions = [
+  {
+    key: 'Low Solidity Hydrofoil Impellers',
+    title: 'Low Solidity Hydrofoil Impellers',
+    description:
+      'High-efficiency axial impellers for low-power blending and gentle solids suspension. Maximize flow while minimizing energy use and shear.',
+    uses: [
+      'Efficient liquid blending',
+      'Gentle solids suspension',
+      'Large tank mixing',
+      'Low-shear applications',
+    ],
+    tags: 'SPX FLOW, Hydrofoil Impeller, Axial Flow, Low Power, High Efficiency',
+    industries: 'Chemical, Water Treatment, Mining, Food & Beverage',
+    image: '/industrial/66df1c08856bf91f22a8148a4f525cd1f5280dc7.png',
+  },
+  {
+    key: 'High Viscosity/Non-Newtonian Mixers',
+    title: 'High Viscosity & Non-Newtonian Mixers',
+    description:
+      'Heavy-duty mixers designed to handle high-viscosity fluids with strong torque and robust drive systems.',
+    uses: [
+      'Mixing pastes and slurries',
+      'Blending food process',
+      'Processing non-Newtonian fluids',
+      'High-torque applications',
+    ],
+    tags: 'SPX FLOW, High Viscosity Mixing, Non-Newtonian',
+    industries: 'Paints & Coatings, Food, Cosmetics, Mining, Plastics',
+    image: '/industrial/a8b70a310a31a48a2aec73fade3b55e613d2bb29%20(1).png',
+  },
+  {
+    key: 'High-Shear & Dispersion Mixers',
+    title: 'High-Shear & Dispersion Mixers',
+    description:
+      'High-energy mixers for rapid dispersion and emulsification to achieve consistent mixtures.',
+    uses: [
+      'Creating emulsions',
+      'Dispersing pigments',
+      'Cell disruption',
+      'Rapid mixing/homogenization',
+    ],
+    tags: 'SPX FLOW, High Shear Mixer, Dispersion',
+    industries: 'Pharma & Cosmetics, Chemicals, Specialty',
+    image: '/industrial/18ac7cbf993b2185719703d8e7886e2fdda1434e.png',
+  },
+  {
+    key: 'Top Entry Mixer Drives',
+    title: 'Top Entry Mixer Drives & Assemblies',
+    description:
+      'Robust drive systems and complete assemblies for top-mounted industrial mixers.',
+    uses: [
+      'Powering large-scale agitators',
+      'Driving retrofit upgrades',
+      'High-pressure/temperature reactors',
+      'Critical chemical processes',
+    ],
+    tags: 'SPX FLOW, Mixer Drives, Top Entry',
+    industries: 'Chemical, Pharmaceutical, Mining & Metals, Oil & Gas',
+    image: '/industrial/68a2022f6c5b545b263bb5ac7588c1459f5252d4.png',
+  },
+];
 
 // Grinding Media product data
 const grindingMediaProducts = {
@@ -260,7 +537,7 @@ const conveyorProducts = {
 
 const conveyorCategories = Object.keys(conveyorProducts);
 
-// Boilers & Spares product data
+// Boilers, Burners & Spares product data
 const boilerProducts = {
   'Industrial Boilers': {
     image: '/pump valves/industry.png',
@@ -326,10 +603,81 @@ const boilerProducts = {
     ],
     tags: 'Industrial Tanks, Pressure Vessels, Custom Storage',
     industries: 'Chemical, Manufacturing, Water Treatment'
+  },
+  'Combustion Systems': {
+    image: '/industrial/combustion.png',
+    name: 'Combustion Systems',
+    description: 'High-efficiency Ecoflam industrial burners and combustion systems designed for optimal fuel performance, reduced emissions, and reliable heating in demanding applications.',
+    uses: [
+      'Industrial boiler combustion optimization',
+      'Process heating system upgrades',
+      'Fuel efficiency improvement',
+      'Emission reduction compliance'
+    ],
+    tags: 'Ecoflam, Burners, Combustion Systems, Fuel Efficiency, Heating',
+    industries: 'Cement Plants, Sugar Factories, Manufacturing, Food Processing, Commercial Heating'
   }
 };
 
 const boilerCategories = Object.keys(boilerProducts);
+
+// Ecoflam Industrial Burners product data
+const ecoflamProducts = {
+  'ECOFLAM DB Series (Duoblock)': {
+    image: '/industrial/ecoflom/Rectangle%2056.png',
+    name: 'ECOFLAM DB Series (Duoblock)',
+    description: 'High-capacity industrial burners designed for boilers and furnaces. Capable of burning two types of fuel (Duoblock) - light oil and heavy oil - featuring advanced combustion air and control technology.',
+    uses: [
+      'Firing in large industrial boilers and furnaces',
+      'Industrial process heating and steam generation',
+      'Mineral and salt processing plants',
+      'Power and co-generation plants'
+    ],
+    tags: 'Ecoflam, DB Series, Duoblock Burner, Dual Fuel, Industrial Boiler, High Capacity',
+    industries: 'Chemical Processing, Power Generation, Mining & Minerals'
+  },
+  'ECOFLAM DBL Series': {
+    image: '/industrial/ecoflom/Rectangle%2056-1.png',
+    name: 'ECOFLAM DBL Series',
+    description: 'Specialized burners engineered for efficient Heavy Fuel Oil (HFO) combustion. Built for demanding environments with the capability to handle high-viscosity fuels reliably.',
+    uses: [
+      'Heavy fuel oil combustion in production plants',
+      'Industrial waste incineration furnaces',
+      'High-temperature thermal processes',
+      'Heating systems in cement and lime plants'
+    ],
+    tags: 'Ecoflam, DBL Series, Heavy Fuel Oil Burner, High Viscosity, Industrial Furnace',
+    industries: 'Cement & Lime, Metallurgy, Waste-to-Energy, Thermal Processing'
+  },
+  'ECOFLAM MB Series': {
+    image: '/industrial/ecoflom/Rectangle%2056-2.png',
+    name: 'ECOFLAM MB Series',
+    description: 'High-efficiency gas burners offering precise control and clean combustion. Ideal for various industrial applications where combustion cleanliness and temperature accuracy are critical.',
+    uses: [
+      'Gas firing in food & beverage processing plants',
+      'Drying and curing ovens in manufacturing',
+      'Firing in industrial drying beds and kilns',
+      'Space heating for large industrial buildings'
+    ],
+    tags: 'Ecoflam, MB Series, Gas Burner, High Efficiency, Clean Combustion',
+    industries: 'Food & Beverage, Textile, Ceramics & Glass, General Processing'
+  },
+  'ECOFLAM K Series': {
+    image: '/industrial/ecoflom/Rectangle%2056-3.png',
+    name: 'K Series - Light Oil Burners',
+    description: 'Robust and reliable burners for Light Oil (like diesel). Features a simple, durable design with good efficiency for standard to medium-duty industrial applications.',
+    uses: [
+      'Heating boilers for medium-sized industries',
+      'Drying ovens in manufacturing processes',
+      'Firing in smaller industrial kilns and dryers',
+      'Plastic molding and machine heating'
+    ],
+    tags: 'Ecoflam, K Series, Light Oil Burner, Diesel Burner, Medium Capacity, Robust',
+    industries: 'Small & Medium Enterprises (SMEs), Plastics, Manufacturing'
+  }
+};
+
+const ecoflamCategories = Object.keys(ecoflamProducts);
 
 // Safety & Maintenance Equipment product data
 const safetyProducts = {
@@ -515,7 +863,16 @@ const mechanicalCategories = Object.keys(mechanicalProducts);
 export default function IndustrialEquipmentPage() {
   const [selectedCategory, setSelectedCategory] = useState('Centrifugal Pumps');
   const currentProduct = products[selectedCategory as keyof typeof products];
-  
+
+  const [selectedBradkenCategory, setSelectedBradkenCategory] = useState('Mill Liners');
+  const currentBradkenProduct = bradkenProducts[selectedBradkenCategory as keyof typeof bradkenProducts];
+
+  const [selectedCrushingCategory, setSelectedCrushingCategory] = useState('Jaw Crushers');
+  const currentCrushingProduct = crushingProducts[selectedCrushingCategory as keyof typeof crushingProducts];
+
+  const [selectedSpareWearCategory, setSelectedSpareWearCategory] = useState('Mantles & Concaves');
+  const currentSpareWearProduct = spareWearProducts[selectedSpareWearCategory as keyof typeof spareWearProducts];
+
   const [selectedGrindingCategory, setSelectedGrindingCategory] = useState('Forged Steel Balls');
   const currentGrindingProduct = grindingMediaProducts[selectedGrindingCategory as keyof typeof grindingMediaProducts];
   
@@ -525,11 +882,17 @@ export default function IndustrialEquipmentPage() {
   const [selectedBoilerCategory, setSelectedBoilerCategory] = useState('Industrial Boilers');
   const currentBoilerProduct = boilerProducts[selectedBoilerCategory as keyof typeof boilerProducts];
   
+  const [selectedEcoflamCategory, setSelectedEcoflamCategory] = useState('ECOFLAM DB Series (Duoblock)');
+  const currentEcoflamProduct = ecoflamProducts[selectedEcoflamCategory as keyof typeof ecoflamProducts];
+  
   const [selectedSafetyCategory, setSelectedSafetyCategory] = useState('PPE');
   const currentSafetyProduct = safetyProducts[selectedSafetyCategory as keyof typeof safetyProducts];
   
   const [selectedMechanicalCategory, setSelectedMechanicalCategory] = useState('Bearings');
   const currentMechanicalProduct = mechanicalProducts[selectedMechanicalCategory as keyof typeof mechanicalProducts];
+
+  const [selectedMixer, setSelectedMixer] = useState('Low Solidity Hydrofoil Impellers');
+  const currentMixer = mixerSolutions.find((mixer) => mixer.key === selectedMixer) || mixerSolutions[0];
 
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState('');
@@ -563,7 +926,7 @@ export default function IndustrialEquipmentPage() {
             }}
           >
             <Image
-              src="/pump valves/fe5ca0868dfd03b5410bb75eb2f933f82114701b.jpg"
+              src="/images/a10f525d9bf51b24ab4dafddf505c89e9e179263.jpg"
               alt="Premium Industrial Equipment"
               fill
               className="object-cover"
@@ -594,34 +957,57 @@ export default function IndustrialEquipmentPage() {
         </div>
       </section>
 
+      {/* SPX Flow Mixers & Agitators - First Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-white px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-red-600"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">SPX Flow Mixers &amp; Agitators</h2>
+            </div>
+            <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
+              Industrial <span className="text-red-600 font-semibold">mixing</span> and <span className="text-red-600 font-semibold">agitation</span> solutions for diverse process applications
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-2">
+            {mixerSolutions.map((m) => (
+              <button
+                key={m.key}
+                onClick={() => setSelectedMixer(m.key)}
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-sm transition-all duration-300 whitespace-nowrap ${
+                  m.key === selectedMixer ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
+                }`}
+              >
+                {m.key}
+              </button>
+            ))}
+          </div>
+
+          <ProductCard product={currentMixer} showContactButton={false} compact />
+        </div>
+      </section>
+
       {/* Pumps & Valves Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-white px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
-          {/* Section Title */}
           <div className="text-center mb-8">
-            <div className="flex items-center justify-center gap-2 mb-3">
-              <span className="w-8 border-t-4 border-red-600" />
-              <span className="text-base md:text-lg font-semibold text-gray-900">
-                Pumps &amp; Valves
-              </span>
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-red-600"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Pumps &amp; Valves</h2>
             </div>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900">
-              Comprehensive fluid handling{' '}
-              <span className="text-red-600 font-semibold">solutions</span> for{' '}
-              <span className="text-red-600 font-semibold">industrial</span> applications
-            </h2>
+            <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
+              Comprehensive fluid handling <span className="text-red-600 font-semibold">solutions</span> for <span className="text-red-600 font-semibold">industrial</span> applications
+            </p>
           </div>
 
-          {/* Category Buttons */}
           <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-2">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-sm transition-all duration-300 whitespace-nowrap ${
-                  selectedCategory === category
-                    ? 'bg-red-600 text-white shadow-lg'
-                    : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
+                  selectedCategory === category ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
                 }`}
               >
                 {category}
@@ -629,88 +1015,100 @@ export default function IndustrialEquipmentPage() {
             ))}
           </div>
 
-          {/* Product Card */}
-          {currentProduct && (
-            <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 mb-8 sm:mb-10 md:mb-12 px-2">
-              <div
-                className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl"
-                style={{
-                  filter: 'drop-shadow(0 0 10px rgba(0, 0, 0, 0.25))',
-                }}
-              >
-                <div
-                  className="bg-white rounded-2xl overflow-hidden"
-                  style={{
-                    clipPath: 'polygon(0 80px, 80px 0, 100% 0, 100% 100%, 0 100%)',
-                  }}
-                >
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Left Image Section - FIXED for desktop */}
-                    <div className="lg:w-[43%] relative min-h-[300px] lg:min-h-[420px]">
-                      <div className="relative w-full h-full">
-                        <div className="absolute inset-0">
-                          <Image
-                            src={currentProduct.image}
-                            alt={currentProduct.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 43vw, 40vw"
-                            priority
-                          />
-                          {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Right Content Section */}
-                    <div className="lg:w-[57%] p-6 sm:p-8 lg:p-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1D2550] mb-3">
-                        {currentProduct.name}
-                      </h3>
-                      
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-                        {currentProduct.description}
-                      </p>
+          {currentProduct && <ProductCard product={currentProduct} showContactButton={false} />}
+        </div>
+      </section>
 
-                      {/* Uses */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-2">Uses:</h4>
-                        <ul className="space-y-1.5">
-                          {currentProduct.uses.map((use, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-600 text-sm mt-0.5 flex-shrink-0">◆</span>
-                              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{use}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="mb-3">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Tags:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentProduct.tags}</p>
-                      </div>
-
-                      {/* Industries */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Industries:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentProduct.industries}</p>
-                      </div>
-
-                      {/* Contact Button */}
-                      <button
-                        onClick={() => handleContactClick(currentProduct.name)}
-                        className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto text-sm"
-                      >
-                        Contact for Inquiry
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Bradken Wear Solutions Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-red-600"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Bradken Wear Solutions</h2>
             </div>
-          )}
+            <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
+              Engineered <span className="text-red-600 font-semibold">wear parts</span> for <span className="text-red-600 font-semibold">mining</span> and <span className="text-red-600 font-semibold">processing</span>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-2">
+            {bradkenCategories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedBradkenCategory(category)}
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-sm transition-all duration-300 whitespace-nowrap ${
+                  selectedBradkenCategory === category ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {currentBradkenProduct && <ProductCard product={currentBradkenProduct} showContactButton={false} compact />}
+        </div>
+      </section>
+
+      {/* Crushing & Screening Solutions Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-red-600"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Crushing &amp; Screening Solutions</h2>
+            </div>
+            <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
+              Robust crushing equipment engineered for Africa&apos;s toughest <span className="text-red-600 font-semibold">mining operations</span>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-2">
+            {crushingCategories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCrushingCategory(category)}
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-sm transition-all duration-300 whitespace-nowrap ${
+                  selectedCrushingCategory === category ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {currentCrushingProduct && <ProductCard product={currentCrushingProduct} showContactButton={false} compact />}
+        </div>
+      </section>
+
+      {/* Spare Wear Parts Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-red-600"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Spare Wear Parts</h2>
+            </div>
+            <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
+              CE-Africa critical <span className="text-red-600 font-semibold">spares</span> and premium <span className="text-red-600 font-semibold">wear</span> components
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-2">
+            {spareWearCategories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedSpareWearCategory(category)}
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-sm transition-all duration-300 whitespace-nowrap ${
+                  selectedSpareWearCategory === category ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {currentSpareWearProduct && <ProductCard product={currentSpareWearProduct} showContactButton={false} compact />}
         </div>
       </section>
 
@@ -745,81 +1143,7 @@ export default function IndustrialEquipmentPage() {
             ))}
           </div>
 
-          {/* Product Card */}
-          {currentGrindingProduct && (
-            <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 mb-8 sm:mb-10 md:mb-12 px-2">
-              <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl">
-                <div
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl"
-                  style={{
-                    clipPath: 'polygon(0 80px, 80px 0, 100% 0, 100% 100%, 0 100%)',
-                  }}
-                >
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Image Section */}
-                    <div className="lg:w-[43%] relative min-h-[300px] lg:min-h-[420px]">
-                      <div className="relative w-full h-full">
-                        <div className="absolute inset-0">
-                          <Image
-                            src={currentGrindingProduct.image}
-                            alt={currentGrindingProduct.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 43vw, 40vw"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content Section */}
-                    <div className="lg:w-[57%] p-6 sm:p-8 lg:p-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1D2550] mb-3">
-                        {currentGrindingProduct.name}
-                      </h3>
-                      
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-                        {currentGrindingProduct.description}
-                      </p>
-
-                      {/* Uses */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-2">Uses:</h4>
-                        <ul className="space-y-1.5">
-                          {currentGrindingProduct.uses.map((use, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-600 text-sm mt-0.5 flex-shrink-0">◆</span>
-                              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{use}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="mb-3">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Tags:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentGrindingProduct.tags}</p>
-                      </div>
-
-                      {/* Industries */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Industries:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentGrindingProduct.industries}</p>
-                      </div>
-
-                      {/* Contact Button */}
-                      <button
-                        onClick={() => handleContactClick(currentGrindingProduct.name)}
-                        className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto text-sm"
-                      >
-                        Contact for Inquiry
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          {currentGrindingProduct && <ProductCard product={currentGrindingProduct} showContactButton={false} />}
         </div>
       </section>
 
@@ -854,92 +1178,18 @@ export default function IndustrialEquipmentPage() {
             ))}
           </div>
 
-          {/* Product Card */}
-          {currentConveyorProduct && (
-            <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 mb-8 sm:mb-10 md:mb-12 px-2">
-              <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl">
-                <div
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200"
-                  style={{
-                    clipPath: 'polygon(0 80px, 80px 0, 100% 0, 100% 100%, 0 100%)',
-                  }}
-                >
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Image Section */}
-                    <div className="lg:w-[43%] relative min-h-[300px] lg:min-h-[420px]">
-                      <div className="relative w-full h-full">
-                        <div className="absolute inset-0">
-                          <Image
-                            src={currentConveyorProduct.image}
-                            alt={currentConveyorProduct.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 43vw, 40vw"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content Section */}
-                    <div className="lg:w-[57%] p-6 sm:p-8 lg:p-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1D2550] mb-3">
-                        {currentConveyorProduct.name}
-                      </h3>
-                      
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-                        {currentConveyorProduct.description}
-                      </p>
-
-                      {/* Uses */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-2">Uses:</h4>
-                        <ul className="space-y-1.5">
-                          {currentConveyorProduct.uses.map((use, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-600 text-sm mt-0.5 flex-shrink-0">◆</span>
-                              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{use}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="mb-3">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Tags:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentConveyorProduct.tags}</p>
-                      </div>
-
-                      {/* Industries */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Industries:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentConveyorProduct.industries}</p>
-                      </div>
-
-                      {/* Contact Button */}
-                      <button
-                        onClick={() => handleContactClick(currentConveyorProduct.name)}
-                        className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto text-sm"
-                      >
-                        Contact for Inquiry
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          {currentConveyorProduct && <ProductCard product={currentConveyorProduct} showContactButton={false} />}
         </div>
       </section>
 
-      {/* Boilers & Spares Section */}
+      {/* Boilers, Burners & Spares Section */}
       <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           {/* Section Title */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-1 w-12 bg-red-600"></div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Boilers & Spares</h2>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Boilers, Burners & Spares</h2>
             </div>
             <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
               Custom-built <span className="text-red-600 font-semibold">industrial boilers</span> and genuine spares from Australian engineering <span className="text-red-600 font-semibold">excellence</span>
@@ -963,81 +1213,38 @@ export default function IndustrialEquipmentPage() {
             ))}
           </div>
 
-          {/* Product Card */}
-          {currentBoilerProduct && (
-            <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 mb-8 sm:mb-10 md:mb-12 px-2">
-              <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl">
-                <div
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl"
-                  style={{
-                    clipPath: 'polygon(0 80px, 80px 0, 100% 0, 100% 100%, 0 100%)',
-                  }}
-                >
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Image Section */}
-                    <div className="lg:w-[43%] relative min-h-[300px] lg:min-h-[420px]">
-                      <div className="relative w-full h-full">
-                        <div className="absolute inset-0">
-                          <Image
-                            src={currentBoilerProduct.image}
-                            alt={currentBoilerProduct.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 43vw, 40vw"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-                        </div>
-                      </div>
-                    </div>
+          {currentBoilerProduct && <ProductCard product={currentBoilerProduct} showContactButton={false} />}
+        </div>
+      </section>
 
-                    {/* Content Section */}
-                    <div className="lg:w-[57%] p-6 sm:p-8 lg:p-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1D2550] mb-3">
-                        {currentBoilerProduct.name}
-                      </h3>
-                      
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-                        {currentBoilerProduct.description}
-                      </p>
-
-                      {/* Uses */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-2">Uses:</h4>
-                        <ul className="space-y-1.5">
-                          {currentBoilerProduct.uses.map((use, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-600 text-sm mt-0.5 flex-shrink-0">◆</span>
-                              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{use}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="mb-3">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Tags:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentBoilerProduct.tags}</p>
-                      </div>
-
-                      {/* Industries */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Industries:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentBoilerProduct.industries}</p>
-                      </div>
-
-                      {/* Contact Button */}
-                      <button
-                        onClick={() => handleContactClick(currentBoilerProduct.name)}
-                        className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto text-sm"
-                      >
-                        Contact for Inquiry
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* Ecoflam Industrial Burners Section */}
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="h-1 w-12 bg-red-600"></div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Ecoflam Industrial Burners</h2>
             </div>
-          )}
+            <p className="text-base sm:text-lg text-gray-700 mt-4 px-2">
+              <span className="text-red-600 font-semibold">High-efficiency</span> industrial combustion <span className="text-red-600 font-semibold">systems</span>
+            </p>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-10 md:mb-12 px-2">
+            {ecoflamCategories.map((series) => (
+              <button
+                key={series}
+                onClick={() => setSelectedEcoflamCategory(series)}
+                className={`px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold text-xs sm:text-sm md:text-sm transition-all duration-300 whitespace-nowrap ${
+                  selectedEcoflamCategory === series ? 'bg-red-600 text-white shadow-lg' : 'bg-white text-gray-900 border-2 border-gray-300 hover:border-red-600 hover:text-red-600'
+                }`}
+              >
+                {series}
+              </button>
+            ))}
+          </div>
+
+          {currentEcoflamProduct && <ProductCard product={currentEcoflamProduct} showContactButton={false} compact />}
         </div>
       </section>
 
@@ -1072,81 +1279,7 @@ export default function IndustrialEquipmentPage() {
             ))}
           </div>
 
-          {/* Product Card */}
-          {currentSafetyProduct && (
-            <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 mb-8 sm:mb-10 md:mb-12 px-2">
-              <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl">
-                <div
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl border border-gray-200"
-                  style={{
-                    clipPath: 'polygon(0 80px, 80px 0, 100% 0, 100% 100%, 0 100%)',
-                  }}
-                >
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Image Section */}
-                    <div className="lg:w-[43%] relative min-h-[300px] lg:min-h-[420px]">
-                      <div className="relative w-full h-full">
-                        <div className="absolute inset-0">
-                          <Image
-                            src={currentSafetyProduct.image}
-                            alt={currentSafetyProduct.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 43vw, 40vw"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content Section */}
-                    <div className="lg:w-[57%] p-6 sm:p-8 lg:p-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1D2550] mb-3">
-                        {currentSafetyProduct.name}
-                      </h3>
-                      
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-                        {currentSafetyProduct.description}
-                      </p>
-
-                      {/* Uses */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-2">Uses:</h4>
-                        <ul className="space-y-1.5">
-                          {currentSafetyProduct.uses.map((use, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-600 text-sm mt-0.5 flex-shrink-0">◆</span>
-                              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{use}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="mb-3">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Tags:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentSafetyProduct.tags}</p>
-                      </div>
-
-                      {/* Industries */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Industries:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentSafetyProduct.industries}</p>
-                      </div>
-
-                      {/* Contact Button */}
-                      <button
-                        onClick={() => handleContactClick(currentSafetyProduct.name)}
-                        className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto text-sm"
-                      >
-                        Contact for Inquiry
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          {currentSafetyProduct && <ProductCard product={currentSafetyProduct} showContactButton={false} />}
         </div>
       </section>
 
@@ -1181,81 +1314,7 @@ export default function IndustrialEquipmentPage() {
             ))}
           </div>
 
-          {/* Product Card */}
-          {currentMechanicalProduct && (
-            <div className="flex justify-center mt-8 sm:mt-10 md:mt-12 mb-8 sm:mb-10 md:mb-12 px-2">
-              <div className="w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl">
-                <div
-                  className="bg-white rounded-2xl overflow-hidden shadow-xl"
-                  style={{
-                    clipPath: 'polygon(0 80px, 80px 0, 100% 0, 100% 100%, 0 100%)',
-                  }}
-                >
-                  <div className="flex flex-col lg:flex-row">
-                    {/* Image Section */}
-                    <div className="lg:w-[43%] relative min-h-[300px] lg:min-h-[420px]">
-                      <div className="relative w-full h-full">
-                        <div className="absolute inset-0">
-                          <Image
-                            src={currentMechanicalProduct.image}
-                            alt={currentMechanicalProduct.name}
-                            fill
-                            className="object-cover"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 43vw, 40vw"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Content Section */}
-                    <div className="lg:w-[57%] p-6 sm:p-8 lg:p-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1D2550] mb-3">
-                        {currentMechanicalProduct.name}
-                      </h3>
-                      
-                      <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
-                        {currentMechanicalProduct.description}
-                      </p>
-
-                      {/* Uses */}
-                      <div className="mb-4">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-2">Uses:</h4>
-                        <ul className="space-y-1.5">
-                          {currentMechanicalProduct.uses.map((use, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <span className="text-red-600 text-sm mt-0.5 flex-shrink-0">◆</span>
-                              <span className="text-gray-700 text-xs sm:text-sm leading-relaxed">{use}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Tags */}
-                      <div className="mb-3">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Tags:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentMechanicalProduct.tags}</p>
-                      </div>
-
-                      {/* Industries */}
-                      <div className="mb-6">
-                        <h4 className="text-sm font-bold text-[#1D2550] mb-1">Industries:</h4>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{currentMechanicalProduct.industries}</p>
-                      </div>
-
-                      {/* Contact Button */}
-                      <button
-                        onClick={() => handleContactClick(currentMechanicalProduct.name)}
-                        className="bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-300 w-full sm:w-auto text-sm"
-                      >
-                        Contact for Inquiry
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
+          {currentMechanicalProduct && <ProductCard product={currentMechanicalProduct} showContactButton={false} />}
         </div>
       </section>
 

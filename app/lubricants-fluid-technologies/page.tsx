@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
+import ClientLogos from '@/components/ClientLogos';
 
 export default function LubricantsFluidTechnologiesPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -66,15 +67,14 @@ export default function LubricantsFluidTechnologiesPage() {
       {/* Main Message Section */}
       <section className="py-12 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col items-center text-center">
-            <div className="h-1 w-12 bg-red-600 mb-6" />
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 max-w-4xl">
+          <div className="text-left">
+            <div className="h-1 w-12 bg-[#BB181B] mb-4" />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               <span className="text-gray-900">Maximize Uptime,</span>{' '}
-              <span className="text-red-600">Minimize Wear,</span>
+              <span className="text-[#BB181B]">Minimize Wear,</span>
               <br />
-              <span className="text-red-600">Optimize Performance</span>
+              <span className="text-[#BB181B]">Optimize Performance</span>
             </h2>
-            <div className="h-1 w-12 bg-red-600 mt-6" />
           </div>
         </div>
       </section>
@@ -421,6 +421,13 @@ export default function LubricantsFluidTechnologiesPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Our Clients Section - before CTA */}
+      <section className="py-12 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ClientLogos title="Our Clients" source="lubricantClients" />
         </div>
       </section>
 

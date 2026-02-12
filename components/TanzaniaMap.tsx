@@ -50,7 +50,7 @@ const createBranchLabelIcon = (name: string) => {
 const BRANCH_CONTACTS: { [key: string]: { email: string; phone: string } } = {
   arusha: {
     email: 'info@hildiseastafrica.com',
-    phone: '+255 123 456 789'
+    phone: '+255 740 547 470'
   },
   dar: {
     email: 'stephano.mkinga@hildiseastafrica.com',
@@ -70,7 +70,7 @@ const BRANCH_CONTACTS: { [key: string]: { email: string; phone: string } } = {
   },
   geita: {
     email: 'info@hildiseastafrica.com',
-    phone: '+255 123 456 789'
+    phone: '+255 754 434 303'
   },
   tanga: {
     email: 'betty@hildiseastafrica.com',

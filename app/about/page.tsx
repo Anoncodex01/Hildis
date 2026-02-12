@@ -85,53 +85,43 @@ export default function AboutPage() {
       {/* Contact Modal Component */}
       <ContactModal isOpen={isModalOpen} onClose={closeModal} />
       
-      {/* Hero Banner Section - Minimal top spacing */}
+      {/* Hero Banner Section */}
       <section className="relative">
-        <div className="px-4 sm:px-6 lg:px-8">
-          <div 
+        <div className="px-6">
+          <div
             className="relative overflow-hidden mx-auto"
             style={{
-              maxWidth: '1344px',
-              width: '100%',
-              height: 'auto',
-              minHeight: '180px',
-              aspectRatio: '1344/400',
+              width: '1344px',
+              maxWidth: '100%',
+              height: '425px',
               borderRadius: '20px',
+              minHeight: '425px',
             }}
           >
-            <div className="relative w-full h-full">
-              {/* Hero Background Image */}
-              <Image
-                src="/images/hero.jpg"
-                alt="Industrial Excellence"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1344px"
-              />
-              
-              {/* Dark Overlay for better text readability */}
-              <div className="absolute inset-0 bg-black/50"></div>
-
-              {/* Hero Content */}
-              <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6 z-10">
-                {/* Breadcrumb Navigation */}
-                <div className="text-white text-xs sm:text-sm md:text-base mb-2 sm:mb-3 md:mb-4">
-                  <span className="opacity-80">Home</span>
-                  <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 inline mx-1 sm:mx-2" />
-                  <span className="text-red-600 font-semibold">About Us</span>
-                </div>
-                
-                {/* Main Hero Title */}
-                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-2 sm:mb-3 md:mb-4 leading-tight px-2">
-                  Driving Industrial Excellence Across East Africa
-                </h1>
-                
-                {/* Hero Description */}
-                <p className="text-white text-xs sm:text-sm md:text-base lg:text-lg max-w-3xl leading-relaxed opacity-90 px-2">
-                  Delivering reliable equipment, chemicals, and engineering solutions that power productivity, safety, and operational continuity
-                </p>
+            <Image
+              src="/images/hero.jpg"
+              alt="Industrial Excellence"
+              fill
+              className="object-cover"
+              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1344px"
+            />
+            <div
+              className="absolute inset-0"
+              style={{ backgroundColor: 'rgba(0, 0, 0, 0.55)' }}
+            />
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-center px-6 z-10">
+              <div className="text-white text-sm mb-8">
+                <span className="opacity-80">Home</span>
+                <ArrowRight className="w-4 h-4 inline mx-2" />
+                <span className="text-red-600 font-semibold">About Us</span>
               </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Driving Industrial Excellence Across East Africa
+              </h1>
+              <p className="text-white text-lg md:text-xl max-w-3xl leading-relaxed opacity-90">
+                Delivering reliable equipment, chemicals, and engineering solutions that power productivity, safety, and operational continuity
+              </p>
             </div>
           </div>
         </div>
@@ -293,7 +283,7 @@ export default function AboutPage() {
       {/* Our Partners Section */}
       <div className="py-12 sm:py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <ClientLogos title="Our Partners" />
+          <ClientLogos title="Our Partners" source="partners" />
         </div>
       </div>
 

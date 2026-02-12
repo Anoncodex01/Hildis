@@ -139,6 +139,15 @@ export default function Header() {
             >
               Projects
             </a>
+            
+            <a 
+              href="/contact-us" 
+              className={`font-medium text-sm transition-colors px-2 py-1 ${
+                isActive('/contact-us') ? 'text-red-600' : 'text-gray-700 hover:text-red-600'
+              }`}
+            >
+              Contact
+            </a>
           </nav>
 
           {/* Desktop CTA Button */}
@@ -256,6 +265,15 @@ export default function Header() {
                 }`}
               >
                 Projects
+              </a>
+              
+              <a 
+                href="/contact-us" 
+                className={`block py-2.5 px-3 font-medium text-gray-900 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors ${
+                  isActive('/contact-us') ? 'text-red-600 bg-red-50' : ''
+                }`}
+              >
+                Contact
               </a>
               
               {/* Mobile CTA Button */}

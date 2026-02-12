@@ -2,7 +2,7 @@
 
 import Header from '@/components/Header';
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import Footer from '@/components/Footer';
 import ContactModal from '@/components/ContactModal';
 import { useState } from 'react';
@@ -65,38 +65,38 @@ export default function ServicesPage() {
       <section className="pt-12 sm:pt-16 md:pt-20 lg:pt-24 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12 sm:mb-16">
-            <div className="text-center">
+            <div className="text-left">
               {/* Red line above */}
-              <div className="flex justify-center mb-4">
-                <div className="h-1 w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
-              </div>
+              <div className="h-1 w-12 bg-red-600 mb-4"></div>
               
-              {/* Title */}
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-4">
-                Services Built on <span className="bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">Reliability</span>
+              {/* Title - left aligned */}
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                Services Built on <span className="text-red-600">Reliability</span>
               </h2>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
-                and <span className="bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">Results</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                and <span className="text-red-600">Results</span>
               </h2>
             </div>
           </div>
 
           {/* Technical Support & Consultancy */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-16 sm:mb-20">
-            <div className="order-2 lg:order-1">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Technical Support & Consultancy</h3>
+            <div className="order-2 lg:order-1 text-left">
+              <div className="mb-4 sm:mb-6">
+                <div className="h-1 w-8 sm:w-12 bg-red-600 mb-3"></div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Technical Support &amp; Consultancy</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
                 Our seasoned engineers provide more than just troubleshooting; they deliver strategic partnership. We offer both on-site and remote technical support, conducting in-depth system diagnostics and performance analysis. Beyond fixing immediate issues, we provide actionable consultancy reports to optimize your plant's efficiency, reduce operational costs, and extend the lifespan of your equipment, ensuring you get the maximum return on your investment.
               </p>
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-[#BB181B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
               >
-                Consult an Expert
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Consult an Expert</span>
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.5} />
+                </span>
               </button>
             </div>
             {/* Image Collage */}
@@ -155,40 +155,44 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-            <div className="order-2">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Equipment Installation & Commissioning</h3>
+            <div className="order-2 text-left">
+              <div className="mb-4 sm:mb-6">
+                <div className="h-1 w-8 sm:w-12 bg-red-600 mb-3"></div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Equipment Installation &amp; Commissioning</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
                 We manage the entire process from unboxing to full operation. Our certified technicians handle the complex installation of machinery, from individual pumps and valves to complete automation systems. We ensure all components are integrated correctly and perform rigorous commissioning tests to verify everything operates to the manufacturer's specifications. This end-to-end service guarantees a seamless, safe, and efficient start-up, eliminating costly delays and installation errors.
               </p>
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-[#BB181B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
               >
-                Plan Your Installation
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Plan Your Installation</span>
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.5} />
+                </span>
               </button>
             </div>
           </div>
 
           {/* Plant Maintenance & Repair */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-16 sm:mb-20">
-            <div className="order-2 lg:order-1">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
-                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Plant Maintenance & Repair</h3>
+            <div className="order-2 lg:order-1 text-left">
+              <div className="mb-4 sm:mb-6">
+                <div className="h-1 w-8 sm:w-12 bg-red-600 mb-3"></div>
+                <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Plant Maintenance &amp; Repair</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
                 Maximize your operational up time and protect your capital investment. We offer proactive, scheduled maintenance plans tailored to your equipment and usage, preventing unexpected failures. When issues do arise, our rapid-response repair team, equipped with genuine OEM parts, gets you back online quickly. This dual approach significantly reduces downtime, lowers long-term maintenance costs, and ensures your plant runs at peak performance.
               </p>
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-[#BB181B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
               >
-                Schedule Maintenance
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Schedule Maintenance</span>
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.5} />
+                </span>
               </button>
             </div>
             {/* Image Collage */}
@@ -247,9 +251,9 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-            <div className="order-2">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
+            <div className="order-2 text-left">
+              <div className="mb-4 sm:mb-6">
+                <div className="h-1 w-8 sm:w-12 bg-red-600 mb-3"></div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Operator Training Programs</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
@@ -257,19 +261,21 @@ export default function ServicesPage() {
               </p>
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-[#BB181B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
               >
-                Inquire About Training
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Inquire About Training</span>
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.5} />
+                </span>
               </button>
             </div>
           </div>
 
           {/* Custom Solution Development */}
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-16 sm:mb-20">
-            <div className="order-2 lg:order-1">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
+            <div className="order-2 lg:order-1 text-left">
+              <div className="mb-4 sm:mb-6">
+                <div className="h-1 w-8 sm:w-12 bg-red-600 mb-3"></div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Custom Solution Development</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
@@ -277,10 +283,12 @@ export default function ServicesPage() {
               </p>
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-[#BB181B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
               >
-                Request a Custom Solution
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Request a Custom Solution</span>
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.5} />
+                </span>
               </button>
             </div>
             {/* Image Collage */}
@@ -339,9 +347,9 @@ export default function ServicesPage() {
                 </div>
               </div>
             </div>
-            <div className="order-2">
-              <div className="flex items-center gap-3 mb-4 sm:mb-6">
-                <div className="h-1 w-8 sm:w-12 bg-gradient-to-r from-red-500 to-red-600 rounded-full shadow-lg shadow-red-500/30"></div>
+            <div className="order-2 text-left">
+              <div className="mb-4 sm:mb-6">
+                <div className="h-1 w-8 sm:w-12 bg-red-600 mb-3"></div>
                 <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900">Workshop Services (Coming 2026)</h3>
               </div>
               <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8">
@@ -349,10 +357,12 @@ export default function ServicesPage() {
               </p>
               <button
                 onClick={openModal}
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:scale-105 w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-[#BB181B] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:opacity-90 transition-all duration-300 w-full sm:w-auto"
               >
-                Get Notified at Launch
-                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>Get Notified at Launch</span>
+                <span className="flex h-9 w-9 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-full bg-white">
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-gray-900" strokeWidth={2.5} />
+                </span>
               </button>
             </div>
           </div>

@@ -28,8 +28,8 @@ export default function Branches({ variant = 'light' }: BranchesProps) {
       id: 'arusha', 
       name: 'Arusha (H)', 
       label: 'Arusha (HQ)',
-      email: 'info@hildiseastafrica.com', // Default HQ email
-      phone: '+255 123 456 789' // Default HQ phone
+      email: 'info@hildiseastafrica.com',
+      phone: '+255 740 547 470'
     },
     { 
       id: 'dar', 
@@ -63,8 +63,8 @@ export default function Branches({ variant = 'light' }: BranchesProps) {
       id: 'geita', 
       name: 'Geita', 
       label: 'Geita',
-      email: 'info@hildiseastafrica.com', // Default for Geita
-      phone: '+255 123 456 789' // Default for Geita
+      email: 'info@hildiseastafrica.com',
+      phone: '+255 754 434 303'
     },
     { 
       id: 'tanga', 
