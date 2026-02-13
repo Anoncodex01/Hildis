@@ -57,31 +57,25 @@ export default function ClientLogos({ title = "Our Clients", source = "clients" 
     : source === 'lubricantClients' ? lubricantClientLogos
     : clientLogos;
   return (
-    <section className="py-12 bg-white overflow-hidden">
-      <h2 className="text-center text-3xl font-bold text-gray-900 mb-10">{title}</h2>
-
-      <div className="relative">
-        <div className="overflow-hidden">
-          <div className="flex animate-scroll whitespace-nowrap">
-            {[...Array(3)].map((_, copyIndex) =>
-              logos.map((logo, index) => (
-                <div
-                  key={`${copyIndex}-${index}`}
-                  className="inline-flex items-center justify-center shrink-0 mx-6"
-                  style={{ width: '100px', height: '40px' }}
-                >
-                  <Image
-                    src={logo.src}
-                    alt={logo.alt}
-                    width={100}
-                    height={40}
-                    className="object-contain w-full h-full"
-                    unoptimized
-                  />
-                </div>
-              ))
-            )}
-          </div>
+    <section className="py-16 bg-white">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-center text-3xl font-bold text-gray-900 mb-12">{title}</h2>
+        <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-7 gap-6 sm:gap-8 place-items-center">
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className="flex items-center justify-center w-16 h-10 sm:w-20 sm:h-12"
+            >
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={80}
+                height={48}
+                className="object-contain max-w-full max-h-full"
+                unoptimized
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

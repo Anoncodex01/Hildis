@@ -107,7 +107,7 @@ export default function ProjectsPage() {
       title: 'Ferrous Sulphate Chemical Supply',
       description: 'Reliable bulk supply of Ferrous Sulphate for water treatment and precipitation processes in gold recovery circuits.',
       solutions: ['Scheduled bulk delivery of high-purity Ferrous Sulphate.', 'Technical support for optimal dosing and process integration.'],
-      clients: 'Barrick Gold (North Mara)',
+      clients: 'Barrick Gold (North Mara), Anglogold Ashanti',
       location: 'North Mara, Tanzania',
       image: '/projects/9.png',
     },
@@ -187,6 +187,7 @@ export default function ProjectsPage() {
           <div className="mb-10 text-left">
             <div className="h-1 w-12 bg-[#BB181B] mb-4" />
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+              Proven Impact<br />
               Across <span className="text-[#BB181B]">Tanzania</span>
             </h2>
           </div>

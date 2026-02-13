@@ -8,31 +8,31 @@ export default function Industries() {
     {
       name: 'Mining & Minerals',
       image: '/images/Rectangle 6-1.png',
-      stat: '250+',
+      stat: '10',
       description: 'Mining operations supported across East Africa'
     },
     {
       name: 'Cement Manufacturing',
       image: '/images/Rectangle 6-2.png',
-      stat: '150+',
+      stat: '5',
       description: 'Cement production lines enhanced with Hildis support'
     },
     {
       name: 'Sugar & Agro-Processing',
       image: '/images/Rectangle 6-3.png',
-      stat: '40+',
+      stat: '5',
       description: 'Sugar mills supported with industrial additives'
     },
     {
       name: 'Oil, Gas & Energy',
       image: '/images/Rectangle 6-4.png',
-      stat: '30+',
+      stat: '3',
       description: 'Energy plants benefiting from reliable chemical dosing'
     },
     {
       name: 'Water Treatment',
       image: '/images/Rectangle 6-5.png',
-      stat: '70+',
+      stat: '15',
       description: 'Water treatment systems improved with Hildis solutions'
     }
   ];

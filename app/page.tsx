@@ -5,7 +5,6 @@ import WhoWeAre from '@/components/WhoWeAre';
 import Branches from '@/components/Branches';
 import Services from '@/components/Services';
 import Industries from '@/components/Industries';
-import RecentProjects from '@/components/RecentProjects';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
@@ -20,7 +19,6 @@ export default function Home() {
       <Branches />
       <Services />
       <Industries />
-      <RecentProjects />
       <Testimonials />
       <Contact />
       <Footer />
